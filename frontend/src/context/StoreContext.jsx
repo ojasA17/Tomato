@@ -1,13 +1,14 @@
 import { createContext, useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
+const VITE_BASE_URL = import.meta.env.VITE_BASE_URL;
 
 export const StoreContext=createContext(null)
 
 const StoreContextProvider=(props)=> {
 
     const [cartItems,setCartItems]=useState({});
-    const url="http://localhost:4000"
+    const url=VITE_BASE_URL;
     const [token,setToken] = useState("");
     const [food_list,setFoodList]=useState([]);
 
